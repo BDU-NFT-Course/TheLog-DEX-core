@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Token, TokenAmount } from '@violeta.at.bww/dex-course-u-exchange-sdk'
+import { ChainId, JSBI, Token, TokenAmount } from '@violeta.at.bww/thelog-sdk'
 import { BigNumber } from 'ethers'
 import { ZERO_ADDRESS } from '../constants'
 import { computeUniCirculation } from './computeUniCirculation'

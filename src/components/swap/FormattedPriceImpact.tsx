@@ -1,4 +1,4 @@
-import { Percent } from '@violeta.at.bww/dex-course-u-exchange-sdk'
+import { Percent } from '@violeta.at.bww/thelog-sdk'
 import React from 'react'
 import { ONE_BIPS } from '../../constants'
 import { warningSeverity } from '../../utils/prices'

@@ -1,5 +1,5 @@
 {
-  "factory_contract_address": "0xF3eAD80d7ad58CbA12F73F295d0Dc845c0dA2B39",
-  "pair_init_code_hash": "0xfbc46437b443cd8d82755f5a02d9fc3e51b9ae6ddc401bd1158b1cb07013e265",
-  "router_contract_address": "0x0D7b651E90c4579b01b84996B075c49a5E65B35A"
+  "factory_contract_address": "0xF26f76b3C0833aDBF078B455258648FD0C84f2A0",
+  "pair_init_code_hash": "0xee9b5ca082bad98446bcdea46168f342aeae9940f7386e400d0ad4557aafac88",
+  "router_contract_address": "0xEa43476F586569EFaFb57A72e13513607ed03c50"
 }

@@ -1,0 +1,1063 @@
+./data/V1.ts
+    super(tokenAmount, new TokenAmount(WETH[tokenAmount.token.chainId], etherAmount))
+  const isWETH = Boolean(token && token.equals(WETH[token.chainId]))
+  const { account, chainId } = useActiveWeb3React()
+      chainId ? Object.keys(exchanges).map(address => new Token(chainId, address, 18, 'UNI-V1', 'Uniswap V1')) : [],
+    [chainId, exchanges]
+./data/Allowances.ts
+./data/TotalSupply.ts
+./data/Reserves.ts
+  const { chainId } = useActiveWeb3React()
+        wrappedCurrency(currencyA, chainId),
+        wrappedCurrency(currencyB, chainId)
+    [chainId, currencies]
+./react-app-env.d.ts
+./out
+./assets/svg/logo_white.svg
+./assets/svg/logo.svg
+./assets/svg/QR.svg
+./assets/svg/wordmark.svg
+./assets/svg/lightcircle.svg
+./assets/svg/binance-logo.svg
+./assets/svg/wordmark_white.svg
+./assets/svg/wordmark_pink.svg
+./assets/svg/tokenlist.svg
+./assets/svg/logo_pink.svg
+./assets/images/dropdown-blue.svg
+./assets/images/circle.svg
+./assets/images/x.svg
+./assets/images/plus-blue.svg
+./assets/images/circle-grey.svg
+./assets/images/xl_uni.png
+./assets/images/dropdown.svg
+./assets/images/metamask.png
+./assets/images/big_unicorn.png
+./assets/images/arrow-right.svg
+./assets/images/arrow-down-blue.svg
+./assets/images/rsk-logo.png
+./assets/images/dropup-blue.svg
+./assets/images/coinbaseWalletIcon.svg
+./assets/images/magnifying-glass.svg
+./assets/images/plus-grey.svg
+./assets/images/fortmaticIcon.png
+./assets/images/token-list/lists-light.png
+./assets/images/token-list/lists-dark.png
+./assets/images/arrow-down-grey.svg
+./assets/images/menu.svg
+./assets/images/question-mark.svg
+./assets/images/spinner.svg
+./assets/images/token-logo.png
+./assets/images/matic-logo.png
+./assets/images/trustWallet.png
+./assets/images/walletConnectIcon.svg
+./assets/images/portisIcon.png
+./assets/images/noise.png
+./assets/images/arrow-right-white.png
+./assets/images/token-list-logo.png
+./assets/images/tokenlistsgrouped.png
+./assets/images/blue-loader.svg
+./assets/images/ethereum-logo.png
+./assets/images/link.svg
+./assets/images/question.svg
+./connectors/fortmatic.d.ts
+./connectors/Fortmatic.ts
+import { ChainId } from '@violeta.at.bww/thelog-sdk'
+type FormaticSupportedChains = Extract<ChainId, ChainId.MAINNET | ChainId.ROPSTEN | ChainId.RINKEBY | ChainId.KOVAN>
+const CHAIN_ID_NETWORK_ARGUMENT: { readonly [chainId in FormaticSupportedChains]: string | undefined } = {
+  [ChainId.MAINNET]: undefined,
+  [ChainId.ROPSTEN]: 'ropsten',
+  [ChainId.RINKEBY]: 'rinkeby',
+  [ChainId.KOVAN]: 'kovan'
+      const { apiKey, chainId } = this as any
+      if (chainId in CHAIN_ID_NETWORK_ARGUMENT) {
+        this.fortmatic = new Fortmatic(apiKey, CHAIN_ID_NETWORK_ARGUMENT[chainId as FormaticSupportedChains])
+        throw new Error(`Unsupported network ID: ${chainId}`)
+    return { provider: this.fortmatic.getProvider(), chainId: (this as any).chainId, account }
+./connectors/NetworkConnector.ts
+  urls: { [chainId: number]: string }
+  defaultChainId?: number
+  public readonly chainId: number
+  constructor(chainId: number, url: string, batchWaitTimeMs?: number) {
+    this.chainId = chainId
+    if (method === 'eth_chainId') {
+      return `0x${this.chainId.toString(16)}`
+  private readonly providers: { [chainId: number]: MiniRpcProvider }
+  private currentChainId: number
+  constructor({ urls, defaultChainId }: NetworkConnectorArguments) {
+    invariant(defaultChainId || Object.keys(urls).length === 1, 'defaultChainId is a required argument with >1 url')
+    super({ supportedChainIds: Object.keys(urls).map((k): number => Number(k)) })
+    this.currentChainId = defaultChainId || Number(Object.keys(urls)[0])
+    this.providers = Object.keys(urls).reduce<{ [chainId: number]: MiniRpcProvider }>((accumulator, chainId) => {
+      accumulator[Number(chainId)] = new MiniRpcProvider(Number(chainId), urls[Number(chainId)])
+    return this.providers[this.currentChainId]
+    return { provider: this.providers[this.currentChainId], chainId: this.currentChainId, account: null }
+    return this.providers[this.currentChainId]
+  public async getChainId(): Promise<number> {
+    return this.currentChainId
+./connectors/index.ts
+  supportedChainIds: [1, 3, 4, 5, 30, 31, 42, 56, 100, 137]
+export const bscConnector = new BscConnector({ supportedChainIds: [56] })
+  chainId: 1
+./theme/styled.d.ts
+./theme/index.tsx
+./theme/components.tsx
+./theme/DarkModeQueryParamReader.tsx
+./hooks/Trades.ts
+  const { chainId } = useActiveWeb3React()
+  const bases: Token[] = chainId ? BASES_TO_CHECK_TRADES_AGAINST[chainId] : []
+  const [tokenA, tokenB] = chainId
+    ? [wrappedCurrency(currencyA, chainId), wrappedCurrency(currencyB, chainId)]
+              if (!chainId) return true
+              const customBases = CUSTOM_BASES[chainId]
+    [tokenA, tokenB, bases, basePairs, chainId]
+  const { chainId } = useActiveWeb3React()
+  const tokenIn = wrappedCurrency(currencyIn, chainId)
+  const tokenOut = wrappedCurrency(currencyOut, chainId)
+./hooks/useSocksBalance.ts
+./hooks/useDebounce.ts
+./hooks/StakingRewards.json
+./hooks/usePrevious.ts
+./hooks/useWindowSize.ts
+./hooks/useTransactionDeadline.ts
+./hooks/useTheme.ts
+./hooks/useHttpLocations.ts
+./hooks/useCurrentBlockTimestamp.ts
+./hooks/useENSContentHash.ts
+./hooks/useIsArgentWallet.ts
+./hooks/useENSName.ts
+./hooks/useOnClickOutside.tsx
+./hooks/useColor.ts
+import { Token, ChainId } from '@violeta.at.bww/thelog-sdk'
+  if (token.chainId === ChainId.RINKEBY && token.address === '0xc7AD46e0b8a400Bb3C915120d284AafbA8fc4735') {
+./hooks/useLast.ts
+./hooks/useInterval.ts
+./hooks/useWrapCallback.ts
+  const { chainId, account } = useActiveWeb3React()
+    if (!wethContract || !chainId || !inputCurrency || !outputCurrency) return NOT_APPLICABLE
+    if (inputCurrency === ETHER && currencyEquals(WETH[chainId], outputCurrency)) {
+    } else if (currencyEquals(WETH[chainId], inputCurrency) && outputCurrency === ETHER) {
+  }, [wethContract, chainId, inputCurrency, outputCurrency, inputAmount, balance, addTransaction])
+./hooks/useIsWindowVisible.ts
+./hooks/useToggledVersion.ts
+./hooks/useContract.ts
+import { ChainId, WETH } from '@violeta.at.bww/thelog-sdk'
+  const { chainId } = useActiveWeb3React()
+  return useContract(chainId && V1_FACTORY_ADDRESSES[chainId], V1_FACTORY_ABI, false)
+  const { chainId } = useActiveWeb3React()
+  return useContract(chainId ? WETH[chainId].address : undefined, WETH_ABI, withSignerIfPossible)
+  const { chainId } = useActiveWeb3React()
+    chainId === ChainId.MAINNET ? ARGENT_WALLET_DETECTOR_MAINNET_ADDRESS : undefined,
+  const { chainId } = useActiveWeb3React()
+  if (chainId) {
+    switch (chainId) {
+      case ChainId.MAINNET:
+      case ChainId.GÖRLI:
+      case ChainId.ROPSTEN:
+      case ChainId.RINKEBY:
+  const { chainId } = useActiveWeb3React()
+  return useContract(chainId && MULTICALL_NETWORKS[chainId], MULTICALL_ABI, false)
+  const { chainId } = useActiveWeb3React()
+  return useContract(chainId ? MERKLE_DISTRIBUTOR_ADDRESS[chainId] : undefined, MERKLE_DISTRIBUTOR_ABI, true)
+  const { chainId } = useActiveWeb3React()
+  return useContract(chainId ? UNI[chainId].address : undefined, UNI_ABI, true)
+  const { chainId } = useActiveWeb3React()
+    chainId === ChainId.MAINNET ? '0x65770b5283117639760beA3F867b69b3697a91dd' : undefined,
+./hooks/Tokens.ts
+  const { chainId } = useActiveWeb3React()
+    if (!chainId) return {}
+    const mapWithoutUrls = Object.keys(tokenMap[chainId]).reduce<{ [address: string]: Token }>((newMap, address) => {
+      newMap[address] = tokenMap[chainId][address].token
+  }, [chainId, userAddedTokens, tokenMap, includeUserAdded])
+  const { chainId } = useActiveWeb3React()
+    if (!chainId || searchQuery === '') {
+  }, [chainId, inactiveTokens, searchQuery])
+  const { chainId } = useActiveWeb3React()
+    if (!chainId || !address) return undefined
+        chainId,
+    chainId,
+./hooks/useParsedQueryString.ts
+./hooks/useToggle.ts
+./hooks/useENS.ts
+./hooks/useCopyClipboard.ts
+./hooks/useApproveCallback.ts
+./hooks/useENSAddress.ts
+./hooks/useAddTokenToMetamask.ts
+  const { library, chainId } = useActiveWeb3React()
+  const token: Token | undefined = wrappedCurrency(currencyToAdd, chainId)
+./hooks/useFetchListCallback.ts
+import { ChainId } from '@violeta.at.bww/thelog-sdk'
+  const { chainId, library } = useActiveWeb3React()
+      if (!library || chainId !== ChainId.MAINNET) {
+        if (NETWORK_CHAIN_ID === ChainId.MAINNET) {
+    [chainId, library]
+./hooks/index.ts
+import { ChainId } from '@violeta.at.bww/thelog-sdk'
+export function useActiveWeb3React(): Web3ReactContextInterface<Web3Provider> & { chainId?: ChainId } {
+          injected.getChainId().then(chainId => {
+            const cId = Number(chainId)
+./hooks/useTimestampFromBlock.ts
+./hooks/useSwapCallback.ts
+  const { account, chainId, library } = useActiveWeb3React()
+    if (!trade || !recipient || !library || !account || !tradeVersion || !chainId || !deadline) return []
+      tradeVersion === Version.v2 ? getRouterContract(chainId, library, account) : v1Exchange
+  }, [account, allowedSlippage, chainId, deadline, library, recipient, trade, v1Exchange])
+  const { account, chainId, library } = useActiveWeb3React()
+    if (!trade || !library || !account || !chainId) {
+  }, [trade, library, account, chainId, recipient, recipientAddressOrName, swapCalls, addTransaction])
+./state/mint/hooks.ts
+  const { account, chainId } = useActiveWeb3React()
+      const wrappedIndependentAmount = wrappedCurrencyAmount(independentAmount, chainId)
+      const [tokenA, tokenB] = [wrappedCurrency(currencyA, chainId), wrappedCurrency(currencyB, chainId)]
+  }, [noLiquidity, otherTypedValue, currencies, dependentField, independentAmount, currencyA, chainId, currencyB, pair])
+      const wrappedCurrencyA = wrappedCurrency(currencyA, chainId)
+  }, [chainId, currencyA, noLiquidity, pair, parsedAmounts])
+      wrappedCurrencyAmount(currencyAAmount, chainId),
+      wrappedCurrencyAmount(currencyBAmount, chainId)
+  }, [parsedAmounts, chainId, pair, totalSupply])
+./state/mint/actions.ts
+./state/mint/reducer.test.ts
+./state/mint/reducer.ts
+./state/stake/hooks.ts
+  ChainId,
+  [chainId in ChainId]?: {
+  [ChainId.MAINNET]: [
+      tokens: [WETH[ChainId.MAINNET], DAI],
+      tokens: [WETH[ChainId.MAINNET], USDC],
+      tokens: [WETH[ChainId.MAINNET], USDT],
+      tokens: [WETH[ChainId.MAINNET], WBTC],
+  const { chainId, account } = useActiveWeb3React()
+      chainId
+        ? STAKING_REWARDS_INFO[chainId]?.filter(stakingRewardInfo =>
+    [chainId, pairToFilterBy]
+  const uni = chainId ? UNI[chainId] : undefined
+    if (!chainId || !uni) return []
+    chainId,
+  const { chainId } = useActiveWeb3React()
+  const uni = chainId ? UNI[chainId] : undefined
+./state/lists/updater.ts
+./state/lists/hooks.ts
+import { ChainId, Token } from '@violeta.at.bww/thelog-sdk'
+    super(tokenInfo.chainId, tokenInfo.address, tokenInfo.decimals, tokenInfo.symbol, tokenInfo.name)
+  { [chainId in ChainId]: Readonly<{ [tokenAddress: string]: { token: WrappedTokenInfo; list: TokenList } }> }
+  [ChainId.KOVAN]: {},
+  [ChainId.RINKEBY]: {},
+  [ChainId.ROPSTEN]: {},
+  [ChainId.GÖRLI]: {},
+  [ChainId.RSK]: {},
+  [ChainId.RSKTEST]: {},
+  [ChainId.MAINNET]: {},
+  [ChainId.BINANCE]: {},
+  [ChainId.BINANCETEST]: {},
+  [ChainId.XDAI]: {},
+  [ChainId.POLYGON]: {}
+      if (tokenMap[token.chainId][token.address] !== undefined) throw Error('Duplicate tokens.')
+        [token.chainId]: {
+          ...tokenMap[token.chainId],
+./state/lists/actions.ts
+./state/lists/reducer.test.ts
+./state/lists/reducer.ts
+./state/multicall/updater.tsx
+ * @param chainId the current chain id
+  chainId?: number
+  if (!allListeners || !chainId) return {}
+  const listeners = allListeners[chainId]
+ * @param chainId the current chain id
+  chainId: number | undefined,
+  if (!chainId || !latestBlockNumber) return []
+  const results = callResults[chainId]
+    const data = callResults[chainId][callKey]
+  const { chainId } = useActiveWeb3React()
+    return activeListeningKeys(debouncedListeners, chainId)
+  }, [debouncedListeners, chainId])
+    return outdatedListeningKeys(state.callResults, listeningKeys, chainId, latestBlockNumber)
+  }, [chainId, state.callResults, listeningKeys, latestBlockNumber])
+    if (!latestBlockNumber || !chainId || !multicallContract) return
+        chainId,
+                chainId,
+            console.error('Failed to fetch multicall chunk', chunk, chainId, error)
+                chainId,
+  }, [chainId, multicallContract, dispatch, serializedOutdatedCallKeys, latestBlockNumber])
+./state/multicall/hooks.ts
+  const { chainId } = useActiveWeb3React()
+    if (!chainId || callKeys.length === 0) return undefined
+        chainId,
+          chainId,
+  }, [chainId, dispatch, options, serializedCallKeys])
+        if (!chainId || !call) return INVALID_RESULT
+        const result = callResults[chainId]?.[toCallKey(call)]
+    [callResults, calls, chainId]
+./state/multicall/actions.ts
+export const addMulticallListeners = createAction<{ chainId: number; calls: Call[]; options?: ListenerOptions }>(
+export const removeMulticallListeners = createAction<{ chainId: number; calls: Call[]; options?: ListenerOptions }>(
+export const fetchingMulticallResults = createAction<{ chainId: number; calls: Call[]; fetchingBlockNumber: number }>(
+  chainId: number
+  chainId: number
+./state/multicall/updater.test.ts
+./state/multicall/actions.test.ts
+./state/multicall/reducer.test.ts
+          chainId: 1,
+          chainId: 1
+          chainId: 1,
+          chainId: 1
+          chainId: 1,
+          chainId: 1,
+          chainId: 1,
+          chainId: 1,
+          chainId: 1,
+          chainId: 1,
+          chainId: 1,
+          chainId: 1,
+          chainId: 1,
+          chainId: 1,
+          chainId: 1,
+          chainId: 1,
+          chainId: 1,
+          chainId: 1,
+          chainId: 1,
+./state/multicall/reducer.ts
+    [chainId: number]: {
+    [chainId: number]: {
+    .addCase(addMulticallListeners, (state, { payload: { calls, chainId, options: { blocksPerFetch = 1 } = {} } }) => {
+      listeners[chainId] = listeners[chainId] ?? {}
+        listeners[chainId][callKey] = listeners[chainId][callKey] ?? {}
+        listeners[chainId][callKey][blocksPerFetch] = (listeners[chainId][callKey][blocksPerFetch] ?? 0) + 1
+      (state, { payload: { chainId, calls, options: { blocksPerFetch = 1 } = {} } }) => {
+        if (!listeners[chainId]) return
+          if (!listeners[chainId][callKey]) return
+          if (!listeners[chainId][callKey][blocksPerFetch]) return
+          if (listeners[chainId][callKey][blocksPerFetch] === 1) {
+            delete listeners[chainId][callKey][blocksPerFetch]
+            listeners[chainId][callKey][blocksPerFetch]--
+    .addCase(fetchingMulticallResults, (state, { payload: { chainId, fetchingBlockNumber, calls } }) => {
+      state.callResults[chainId] = state.callResults[chainId] ?? {}
+        const current = state.callResults[chainId][callKey]
+          state.callResults[chainId][callKey] = {
+          state.callResults[chainId][callKey].fetchingBlockNumber = fetchingBlockNumber
+    .addCase(errorFetchingMulticallResults, (state, { payload: { fetchingBlockNumber, chainId, calls } }) => {
+      state.callResults[chainId] = state.callResults[chainId] ?? {}
+        const current = state.callResults[chainId][callKey]
+    .addCase(updateMulticallResults, (state, { payload: { chainId, results, blockNumber } }) => {
+      state.callResults[chainId] = state.callResults[chainId] ?? {}
+        const current = state.callResults[chainId][callKey]
+        state.callResults[chainId][callKey] = {
+./state/wallet/hooks.ts
+  const { account, chainId } = useActiveWeb3React()
+  const uni = chainId ? UCASH[chainId] : undefined
+./state/governance/hooks.ts
+  const { account, chainId } = useActiveWeb3React()
+  const uni = chainId ? UNI[chainId] : undefined
+  const { account, chainId } = useActiveWeb3React()
+  const uni = chainId ? UNI[chainId] : undefined
+  const { account, chainId, library } = useActiveWeb3React()
+      if (!library || !chainId || !account || !isAddress(delegatee ?? '')) return undefined
+    [account, addTransaction, chainId, library, uniContract]
+./state/transactions/updater.tsx
+  const { chainId, library } = useActiveWeb3React()
+  const transactions = chainId ? state[chainId] ?? {} : {}
+    if (!chainId || !library || !lastBlockNumber) return
+                  chainId,
+              dispatch(checkedTransaction({ chainId, hash, blockNumber: lastBlockNumber }))
+  }, [chainId, library, transactions, lastBlockNumber, dispatch, addPopup])
+./state/transactions/actions.ts
+import { ChainId } from '@violeta.at.bww/thelog-sdk'
+  chainId: ChainId
+export const clearAllTransactions = createAction<{ chainId: ChainId }>('transactions/clearAllTransactions')
+  chainId: ChainId
+  chainId: ChainId
+./state/transactions/updater.test.ts
+./state/transactions/hooks.tsx
+  const { chainId, account } = useActiveWeb3React()
+      if (!chainId) return
+      dispatch(addTransaction({ hash, from: account, chainId, approval, summary, claim }))
+    [dispatch, chainId, account]
+  const { chainId } = useActiveWeb3React()
+  return chainId ? state[chainId] ?? {} : {}
+./state/transactions/reducer.test.ts
+import { ChainId } from '@violeta.at.bww/thelog-sdk'
+          chainId: ChainId.MAINNET,
+      expect(txs[ChainId.MAINNET]).toBeTruthy()
+      expect(txs[ChainId.MAINNET]?.['0x0']).toBeTruthy()
+      const tx = txs[ChainId.MAINNET]?.['0x0']
+          chainId: ChainId.RINKEBY,
+          chainId: ChainId.RINKEBY,
+          chainId: ChainId.RINKEBY,
+      const tx = store.getState()[ChainId.RINKEBY]?.['0x0']
+          chainId: ChainId.RINKEBY,
+          chainId: ChainId.RINKEBY,
+          chainId: ChainId.RINKEBY,
+      const tx = store.getState()[ChainId.RINKEBY]?.['0x0']
+          chainId: ChainId.RINKEBY,
+          chainId: ChainId.RINKEBY,
+          chainId: ChainId.RINKEBY,
+      const tx = store.getState()[ChainId.RINKEBY]?.['0x0']
+          chainId: ChainId.MAINNET,
+          chainId: ChainId.RINKEBY,
+      expect(Object.keys(store.getState())).toEqual([String(ChainId.MAINNET), String(ChainId.RINKEBY)])
+      expect(Object.keys(store.getState()[ChainId.MAINNET] ?? {})).toEqual(['0x0'])
+      expect(Object.keys(store.getState()[ChainId.RINKEBY] ?? {})).toEqual(['0x1'])
+      store.dispatch(clearAllTransactions({ chainId: ChainId.MAINNET }))
+      expect(Object.keys(store.getState())).toEqual([String(ChainId.MAINNET), String(ChainId.RINKEBY)])
+      expect(Object.keys(store.getState()[ChainId.MAINNET] ?? {})).toEqual([])
+      expect(Object.keys(store.getState()[ChainId.RINKEBY] ?? {})).toEqual(['0x1'])
+./state/transactions/reducer.ts
+  [chainId: number]: {
+    .addCase(addTransaction, (transactions, { payload: { chainId, from, hash, approval, summary, claim } }) => {
+      if (transactions[chainId]?.[hash]) {
+      const txs = transactions[chainId] ?? {}
+      transactions[chainId] = txs
+    .addCase(clearAllTransactions, (transactions, { payload: { chainId } }) => {
+      if (!transactions[chainId]) return
+      transactions[chainId] = {}
+    .addCase(checkedTransaction, (transactions, { payload: { chainId, hash, blockNumber } }) => {
+      const tx = transactions[chainId]?.[hash]
+    .addCase(finalizeTransaction, (transactions, { payload: { hash, chainId, receipt } }) => {
+      const tx = transactions[chainId]?.[hash]
+./state/swap/hooks.ts
+  const { chainId } = useActiveWeb3React()
+    if (!chainId) return
+  }, [dispatch, chainId])
+./state/swap/actions.ts
+./state/swap/reducer.test.ts
+./state/swap/reducer.ts
+./state/swap/hooks.test.ts
+./state/claim/hooks.ts
+import { TokenAmount, JSBI, ChainId } from '@violeta.at.bww/thelog-sdk'
+function fetchClaim(account: string, chainId: ChainId): Promise<UserClaimData | null> {
+  const key = `${chainId}:${account}`
+    fetch(`https://gentle-frost-9e74.uniswap.workers.dev/${chainId}/${formatted}`)
+          console.debug(`No claim for account ${formatted} on chain ID ${chainId}`)
+  const { chainId } = useActiveWeb3React()
+  const key = `${chainId}:${account}`
+    if (!account || !chainId) return
+    fetchClaim(account, chainId).then(accountClaimInfo =>
+  }, [account, chainId, key])
+  return account && chainId ? claimInfo[key] : undefined
+  const { chainId } = useActiveWeb3React()
+  const uni = chainId ? UNI[chainId] : undefined
+  const { library, chainId } = useActiveWeb3React()
+    if (!claimData || !account || !library || !chainId || !distributorContract) return
+./state/burn/hooks.ts
+  const { account, chainId } = useActiveWeb3React()
+  const [tokenA, tokenB] = [wrappedCurrency(currencyA, chainId), wrappedCurrency(currencyB, chainId)]
+./state/burn/actions.ts
+./state/burn/reducer.ts
+./state/user/updater.tsx
+./state/user/actions.ts
+  chainId: number
+export const removeSerializedToken = createAction<{ chainId: number; address: string }>('user/removeSerializedToken')
+export const removeSerializedPair = createAction<{ chainId: number; tokenAAddress: string; tokenBAddress: string }>(
+./state/user/hooks.tsx
+import { ChainId, Pair, Token } from '@violeta.at.bww/thelog-sdk'
+    chainId: token.chainId,
+    serializedToken.chainId,
+export function useRemoveUserAddedToken(): (chainId: number, address: string) => void {
+    (chainId: number, address: string) => {
+      dispatch(removeSerializedToken({ chainId, address }))
+  const { chainId } = useActiveWeb3React()
+    if (!chainId) return []
+    return Object.values(serializedTokensMap[chainId as ChainId] ?? {}).map(deserializeToken)
+  }, [serializedTokensMap, chainId])
+  return new Token(tokenA.chainId, Pair.getAddress(tokenA, tokenB), 18, 'UNI-V2', 'Uniswap V2')
+  const { chainId } = useActiveWeb3React()
+  const pinnedPairs = useMemo(() => (chainId ? PINNED_PAIRS[chainId] ?? [] : []), [chainId])
+      chainId
+              (BASES_TO_TRACK_LIQUIDITY_FOR[chainId] ?? [])
+    [tokens, chainId]
+    if (!chainId || !savedSerializedPairs) return []
+    const forChain = savedSerializedPairs[chainId]
+  }, [savedSerializedPairs, chainId])
+./state/user/reducer.test.ts
+./state/user/reducer.ts
+    [chainId: number]: {
+    [chainId: number]: {
+      state.tokens[serializedToken.chainId] = state.tokens[serializedToken.chainId] || {}
+      state.tokens[serializedToken.chainId][serializedToken.address] = serializedToken
+    .addCase(removeSerializedToken, (state, { payload: { address, chainId } }) => {
+      state.tokens[chainId] = state.tokens[chainId] || {}
+      delete state.tokens[chainId][address]
+        serializedPair.token0.chainId === serializedPair.token1.chainId &&
+        const chainId = serializedPair.token0.chainId
+        state.pairs[chainId] = state.pairs[chainId] || {}
+        state.pairs[chainId][pairKey(serializedPair.token0.address, serializedPair.token1.address)] = serializedPair
+    .addCase(removeSerializedPair, (state, { payload: { chainId, tokenAAddress, tokenBAddress } }) => {
+      if (state.pairs[chainId]) {
+        delete state.pairs[chainId][pairKey(tokenAAddress, tokenBAddress)]
+        delete state.pairs[chainId][pairKey(tokenBAddress, tokenAAddress)]
+./state/index.ts
+./state/global/actions.ts
+./state/application/updater.ts
+  const { library, chainId } = useActiveWeb3React()
+  const [state, setState] = useState<{ chainId: number | undefined; blockNumber: number | null }>({
+    chainId,
+        if (chainId === state.chainId) {
+          if (typeof state.blockNumber !== 'number') return { chainId, blockNumber }
+          return { chainId, blockNumber: Math.max(blockNumber, state.blockNumber) }
+    [chainId, setState]
+    if (!library || !chainId || !windowVisible) return undefined
+    setState({ chainId, blockNumber: null })
+      .catch(error => console.error(`Failed to get block number for chainId: ${chainId}`, error))
+  }, [dispatch, chainId, library, blockNumberCallback, windowVisible])
+    if (!debouncedState.chainId || !debouncedState.blockNumber || !windowVisible) return
+    dispatch(updateBlockNumber({ chainId: debouncedState.chainId, blockNumber: debouncedState.blockNumber }))
+  }, [windowVisible, dispatch, debouncedState.blockNumber, debouncedState.chainId])
+./state/application/hooks.ts
+  const { chainId } = useActiveWeb3React()
+  return useSelector((state: AppState) => state.application.blockNumber[chainId ?? -1])
+./state/application/actions.ts
+export const updateBlockNumber = createAction<{ chainId: number; blockNumber: number }>('application/updateBlockNumber')
+./state/application/reducer.test.ts
+import { ChainId } from '@violeta.at.bww/thelog-sdk'
+        [ChainId.MAINNET]: 3
+      store.dispatch(updateBlockNumber({ chainId: ChainId.MAINNET, blockNumber: 4 }))
+      expect(store.getState().blockNumber[ChainId.MAINNET]).toEqual(4)
+      store.dispatch(updateBlockNumber({ chainId: ChainId.MAINNET, blockNumber: 2 }))
+      expect(store.getState().blockNumber[ChainId.MAINNET]).toEqual(3)
+      store.dispatch(updateBlockNumber({ chainId: ChainId.ROPSTEN, blockNumber: 2 }))
+        [ChainId.MAINNET]: 3,
+        [ChainId.ROPSTEN]: 2
+./state/application/reducer.ts
+  readonly blockNumber: { readonly [chainId: number]: number }
+      const { chainId, blockNumber } = action.payload
+      if (typeof state.blockNumber[chainId] !== 'number') {
+        state.blockNumber[chainId] = blockNumber
+        state.blockNumber[chainId] = Math.max(blockNumber, state.blockNumber[chainId])
+./utils/retry.test.ts
+./utils/getTokenList.ts
+./utils/parseENSAddress.ts
+./utils/v1SwapArgument.test.ts
+./utils/v1SwapArguments.ts
+./utils/retry.ts
+./utils/chunkArray.ts
+./utils/prices.test.ts
+  ChainId,
+  const token1 = new Token(ChainId.MAINNET, '0x0000000000000000000000000000000000000001', 18)
+  const token2 = new Token(ChainId.MAINNET, '0x0000000000000000000000000000000000000002', 18)
+  const token3 = new Token(ChainId.MAINNET, '0x0000000000000000000000000000000000000003', 18)
+./utils/contenthashToUri.test.skip.ts
+./utils/addNetwork.ts
+  chainId: number
+export async function addNetwork({ library, chainId, info }: AddNetworkArguments): Promise<null | void> {
+  const formattedChainId = hexStripZeros(BigNumber.from(chainId).toHexString())
+          chainId: formattedChainId,
+    console.error('error adding eth network: ', chainId, info, error)
+./utils/prices.ts
+./utils/switchToNetwork.ts
+  chainId?: number
+export async function switchToNetwork({ library, chainId }: SwitchNetworkArguments): Promise<null | void> {
+  if (!chainId && library?.getNetwork) {
+    ;({ chainId } = await library.getNetwork())
+  const formattedChainId = hexStripZeros(BigNumber.from(chainId).toHexString())
+      params: [{ chainId: formattedChainId }]
+    // 4902 is the error code for attempting to switch to an unrecognized chainId
+    if (error.code === 4902 && chainId !== undefined) {
+      const info = CHAIN_INFO[chainId]
+      await addNetwork({ library, chainId, info })
+      await switchToNetwork({ library, chainId })
+./utils/useDebouncedChangeHandler.tsx
+./utils/wrappedCurrency.ts
+  ChainId,
+export function wrappedCurrency(currency: Currency | undefined, chainId: ChainId | undefined): Token | undefined {
+  return chainId && currency === ETHER ? WETH[chainId] : currency instanceof Token ? currency : undefined
+  chainId: ChainId | undefined
+  const token = currencyAmount && chainId ? wrappedCurrency(currencyAmount.currency, chainId) : undefined
+  if (token.equals(WETH[token.chainId])) return ETHER
+./utils/getLibrary.ts
+./utils/trades.ts
+./utils/listSort.ts
+./utils/isZero.ts
+./utils/chunkArray.test.ts
+./utils/maxAmountSpend.ts
+./utils/uriToHttp.test.ts
+./utils/computeUniCirculation.test.ts
+import { ChainId, JSBI, Token, TokenAmount } from '@violeta.at.bww/thelog-sdk'
+  const token = new Token(ChainId.RINKEBY, ZERO_ADDRESS, 18)
+./utils/computeUniCirculation.ts
+./utils/listVersionLabel.ts
+./utils/resolveENSContentHash.ts
+./utils/contenthashToUri.ts
+./utils/currencyId.ts
+./utils/parseENSAddress.test.ts
+./utils/useUSDCPrice.ts
+import { ChainId, Currency, currencyEquals, JSBI, Price, WETH } from '@violeta.at.bww/thelog-sdk'
+  const { chainId } = useActiveWeb3React()
+  const wrapped = wrappedCurrency(currency, chainId)
+        chainId && wrapped && currencyEquals(WETH[chainId], wrapped) ? undefined : currency,
+        chainId ? WETH[chainId] : undefined
+      [wrapped?.equals(USDC) ? undefined : wrapped, chainId === ChainId.MAINNET ? USDC : undefined],
+      [chainId ? WETH[chainId] : undefined, chainId === ChainId.MAINNET ? USDC : undefined]
+    [chainId, currency, wrapped]
+    if (!currency || !wrapped || !chainId) {
+    if (wrapped.equals(WETH[chainId])) {
+        const price = usdcPair.priceOf(WETH[chainId])
+    const ethPairETHAmount = ethPair?.reserveOf(WETH[chainId])
+      ethPairETHAmount && usdcEthPair ? usdcEthPair.priceOf(WETH[chainId]).quote(ethPairETHAmount).raw : JSBI.BigInt(0)
+      if (usdcEthPair.reserveOf(USDC).greaterThan('0') && ethPair.reserveOf(WETH[chainId]).greaterThan('0')) {
+        const currencyEthPrice = ethPair.priceOf(WETH[chainId])
+  }, [chainId, currency, ethPair, ethPairState, usdcEthPair, usdcEthPairState, usdcPair, usdcPairState, wrapped])
+./utils/index.test.ts
+import { TokenAmount, Token, ChainId, Percent, JSBI } from '@violeta.at.bww/thelog-sdk'
+      expect(getEtherscanLink(ChainId.RINKEBY, 'abc', 'address')).toEqual('https://rinkeby.etherscan.io/address/abc')
+      const tokenAmount = new TokenAmount(new Token(ChainId.MAINNET, AddressZero, 0), '100')
+./utils/index.ts
+  ChainId,
+const ETHERSCAN_PREFIXES: { [chainId in ChainId]: string } = {
+  chainId: ChainId,
+  const prefix = `https://${ETHERSCAN_PREFIXES[chainId] || ETHERSCAN_PREFIXES[1]}etherscan.io`
+  return Boolean(currency instanceof Token && defaultTokens[currency.chainId]?.[currency.address])
+./utils/uriToHttp.ts
+./components/Web3Status/index.tsx
+import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
+        <Text>{error instanceof UnsupportedChainIdError ? 'Wrong Network' : 'Error'}</Text>
+./components/AccountDetails/Transaction.tsx
+  const { chainId } = useActiveWeb3React()
+  if (!chainId) return null
+      <TransactionState href={getEtherscanLink(chainId, hash, 'transaction')} pending={pending} success={success}>
+./components/AccountDetails/Copy.tsx
+./components/AccountDetails/index.tsx
+  const { chainId, account, connector } = useActiveWeb3React()
+    if (chainId) dispatch(clearAllTransactions({ chainId }))
+  }, [dispatch, chainId])
+                        {chainId && account && (
+                            href={chainId && getEtherscanLink(chainId, ENSName, 'address')}
+                        {chainId && account && (
+                            href={getEtherscanLink(chainId, account, 'address')}
+./components/Popups/ListUpdatePopup.tsx
+      Object.keys(tokensChanged).reduce((memo, chainId: any) => memo + Object.keys(tokensChanged[chainId]).length, 0),
+                      <React.Fragment key={`${token.chainId}-${token.address}`}>
+                      <React.Fragment key={`${token.chainId}-${token.address}`}>
+./components/Popups/ClaimPopup.tsx
+./components/Popups/TransactionPopup.tsx
+  const { chainId } = useActiveWeb3React()
+        {chainId && (
+          <ExternalLink href={getEtherscanLink(chainId, hash, 'transaction')}>View on Etherscan</ExternalLink>
+./components/Popups/index.tsx
+./components/Popups/PopupItem.tsx
+./components/WalletModal/PendingView.tsx
+./components/WalletModal/index.tsx
+import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
+        if (error instanceof UnsupportedChainIdError) {
+          <HeaderRow>{error instanceof UnsupportedChainIdError ? 'Wrong Network' : 'Error connecting'}</HeaderRow>
+            {error instanceof UnsupportedChainIdError ? (
+./components/WalletModal/Option.tsx
+./components/vote/DelegateModal.tsx
+  const { account, chainId } = useActiveWeb3React()
+  const uniBalance = useTokenBalance(account ?? undefined, chainId ? UNI[chainId] : undefined)
+./components/vote/VoteModal.tsx
+  const { chainId } = useActiveWeb3React()
+            {chainId && (
+              <ExternalLink href={getEtherscanLink(chainId, hash, 'transaction')} style={{ marginLeft: '4px' }}>
+./components/Identicon/index.tsx
+./components/CurrencyInputPanel/index.tsx
+./components/ProgressSteps/index.tsx
+./components/Confetti/index.tsx
+./components/swap/UnsupportedCurrencyFooter.tsx
+  const { chainId } = useActiveWeb3React()
+    chainId && currencies
+          return wrappedCurrency(currency, chainId)
+                      {chainId && (
+                        <ExternalLink href={getEtherscanLink(chainId, token.address, 'address')}>
+./components/swap/SwapHeader.tsx
+./components/swap/TradePrice.tsx
+./components/swap/confirmPriceImpactWithoutFee.ts
+./components/swap/SwapModalHeader.tsx
+./components/swap/SwapModalFooter.tsx
+./components/swap/styleds.tsx
+./components/swap/FormattedPriceImpact.tsx
+./components/swap/BetterTradeLink.tsx
+./components/swap/SwapRoute.tsx
+./components/swap/AdvancedSwapDetails.tsx
+./components/swap/ConfirmSwapModal.tsx
+./components/swap/AdvancedSwapDetailsDropdown.tsx
+./components/TransactionSettings/index.tsx
+./components/ModalViews/index.tsx
+  const { chainId } = useActiveWeb3React()
+        {chainId && hash && (
+          <ExternalLink href={getEtherscanLink(chainId, hash, 'transaction')} style={{ marginLeft: '4px' }}>
+./components/Tooltip/index.tsx
+./components/CurrencyLogo/index.tsx
+    // alert(chainId)
+./components/TransactionConfirmationModal/index.tsx
+import { ChainId, Currency } from '@violeta.at.bww/thelog-sdk'
+  chainId,
+  chainId: ChainId
+          {chainId && hash && (
+            <ExternalLink href={getEtherscanLink(chainId, hash, 'transaction')}>
+  const { chainId } = useActiveWeb3React()
+  if (!chainId) return null
+          chainId={chainId}
+./components/FormattedCurrencyAmount/index.tsx
+./components/Card/index.tsx
+./components/NavigationTabs/index.tsx
+./components/NumericalInput/index.tsx
+./components/PositionCard/V1.tsx
+  const { chainId } = useActiveWeb3React()
+              {`${chainId && token.equals(WETH[chainId]) ? 'WETH' : token.symbol}/ETH`}
+./components/PositionCard/index.tsx
+./components/Logo/index.tsx
+./components/claim/AddressClaimModal.tsx
+  const { chainId } = useActiveWeb3React()
+            {attempting && hash && !claimConfirmed && chainId && hash && (
+              <ExternalLink href={getEtherscanLink(chainId, hash, 'transaction')} style={{ zIndex: 99 }}>
+./components/claim/ClaimModal.tsx
+  const { account, chainId } = useActiveWeb3React()
+            {attempting && claimSubmitted && !claimConfirmed && chainId && claimTxn?.hash && (
+              <ExternalLink href={getEtherscanLink(chainId, claimTxn?.hash, 'transaction')} style={{ zIndex: 99 }}>
+./components/Web3ReactManager/index.tsx
+./components/Menu/index.tsx
+./components/Loader/index.tsx
+./components/SearchModal/Manage.tsx
+./components/SearchModal/sorting.ts
+./components/SearchModal/CommonBases.tsx
+import { ChainId, Currency, currencyEquals, ETHER, Token } from '@violeta.at.bww/thelog-sdk'
+  chainId,
+  chainId?: ChainId
+        {(chainId ? SUGGESTED_BASES[chainId] : []).map((token: Token) => {
+./components/SearchModal/ImportList.tsx
+./components/SearchModal/SortButton.tsx
+./components/SearchModal/ManageLists.tsx
+./components/SearchModal/CurrencyList.tsx
+  const { chainId } = useActiveWeb3React()
+      const token = wrappedCurrency(currency, chainId)
+      chainId,
+./components/SearchModal/ManageTokens.tsx
+  const { chainId } = useActiveWeb3React()
+    if (chainId && userAddedTokens) {
+        return removeToken(chainId, token.address)
+  }, [removeToken, userAddedTokens, chainId])
+      chainId &&
+            <ExternalLink href={getEtherscanLink(chainId, token.address, 'address')}>
+            <TrashIcon onClick={() => removeToken(chainId, token.address)} />
+            <ExternalLinkIcon href={getEtherscanLink(chainId, token.address, 'address')} />
+  }, [userAddedTokens, chainId, removeToken])
+./components/SearchModal/filtering.ts
+./components/SearchModal/CurrencySearch.tsx
+  const { chainId } = useActiveWeb3React()
+          <CommonBases chainId={chainId} onSelect={handleCurrencySelect} selectedCurrency={selectedCurrency} />
+./components/SearchModal/styleds.tsx
+./components/SearchModal/CurrencySearchModal.tsx
+./components/SearchModal/ImportRow.tsx
+  const { chainId } = useActiveWeb3React()
+  const list = chainId && inactiveTokenList?.[chainId]?.[token.address]?.list
+./components/SearchModal/ImportToken.tsx
+  const { chainId } = useActiveWeb3React()
+    (chainId && inactiveTokenList?.[chainId]?.[tokens[0]?.address]?.list) ||
+    (chainId && inactiveTokenList?.[chainId]?.[tokens[1]?.address]?.list)
+          const list = chainId && inactiveTokenList?.[chainId]?.[token.address]?.list
+                {chainId && (
+                  <ExternalLink href={getEtherscanLink(chainId, token.address, 'address')}>
+./components/ListLogo/index.tsx
+./components/AddressInputPanel/index.tsx
+  const { chainId } = useActiveWeb3React()
+              {address && chainId && (
+                <ExternalLink href={getEtherscanLink(chainId, name ?? address, 'address')} style={{ fontSize: '14px' }}>
+./components/analytics/GoogleAnalyticsReporter.tsx
+./components/Header/URLWarning.tsx
+./components/Header/NetworkSelector.tsx
+import { CHAIN_INFO, SupportedChainId } from 'constants/index'
+  const { chainId, library, account, active } = useActiveWeb3React()
+  const info = chainId ? CHAIN_INFO[chainId] : undefined
+  const mainnetInfo = CHAIN_INFO[SupportedChainId.MAINNET]
+  if (!chainId || !info || !library || !showSelector) {
+    if (!library || !chainId || (!implements3085 && targetChain !== chainId)) {
+      switchToNetwork({ library, chainId: targetChain })
+    const active = chainId === targetChain
+        {chainId === targetChain && <FlyoutRowActiveIndicator />}
+          <Row targetChain={SupportedChainId.MAINNET} />
+          <Row targetChain={SupportedChainId.BINANCE} />
+          <Row targetChain={SupportedChainId.POLYGON} />
+          <Row targetChain={SupportedChainId.RSK} />
+./components/Header/UniBalanceContent.tsx
+import { ChainId, TokenAmount } from '@violeta.at.bww/thelog-sdk'
+  const { account, chainId } = useActiveWeb3React()
+  const uni = chainId ? UNI[chainId] : undefined
+  const ucash = chainId ? UCASH[chainId] : undefined
+      blockTimestamp && uni && chainId === ChainId.MAINNET
+    [blockTimestamp, chainId, totalSupply, unclaimedUni, uni]
+            {/*{uni && uni.chainId === ChainId.MAINNET ? (
+./components/Header/Polling.tsx
+  const { chainId } = useActiveWeb3React()
+    <ExternalLink href={chainId && blockNumber ? getEtherscanLink(chainId, blockNumber.toString(), 'block') : ''}>
+./components/Header/index.tsx
+import { ChainId, TokenAmount } from '@violeta.at.bww/thelog-sdk'
+const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
+  [ChainId.RINKEBY]: 'Rinkeby',
+  [ChainId.ROPSTEN]: 'Ropsten',
+  [ChainId.GÖRLI]: 'Görli',
+  [ChainId.KOVAN]: 'Kovan'
+  const { account, chainId, active } = useActiveWeb3React()
+            {chainId && NETWORK_LABELS[chainId] && !showNetworkSelector && (
+              <NetworkCard title={NETWORK_LABELS[chainId]}>{NETWORK_LABELS[chainId]}</NetworkCard>
+./components/Popover/index.tsx
+./components/QuestionHelper/index.tsx
+./components/DoubleLogo/index.tsx
+./components/Sidebar/index.tsx
+./components/TokenWarningModal/index.tsx
+./components/earn/UnstakingModal.tsx
+./components/earn/StakingModal.tsx
+  const { account, chainId, library } = useActiveWeb3React()
+  const parsedAmountWrapped = wrappedCurrencyAmount(parsedAmount, chainId)
+      { name: 'chainId', type: 'uint256' },
+      chainId: chainId,
+./components/earn/PoolCard.tsx
+./components/earn/styled.ts
+./components/earn/ClaimRewardModal.tsx
+./components/Blocklist/index.tsx
+./components/Toggle/ListToggle.tsx
+./components/Toggle/index.tsx
+./components/Button/index.tsx
+./components/Modal/index.tsx
+./components/Row/index.tsx
+./components/Column/index.tsx
+./components/Slider/index.tsx
+./components/Settings/index.tsx
+./index.tsx
+./pages/Earn/Manage.tsx
+  const { account, chainId } = useActiveWeb3React()
+  const tokenA = wrappedCurrency(currencyA ?? undefined, chainId)
+  const tokenB = wrappedCurrency(currencyB ?? undefined, chainId)
+./pages/Earn/index.tsx
+  const { chainId } = useActiveWeb3React()
+  const stakingRewardsExist = Boolean(typeof chainId === 'number' && (STAKING_REWARDS_INFO[chainId]?.length ?? 0) > 0)
+./pages/Earn/Countdown.tsx
+./pages/Pool/styleds.tsx
+./pages/Pool/index.tsx
+./pages/Vote/VotePage.tsx
+  const { chainId, account } = useActiveWeb3React()
+  const uniBalance: TokenAmount | undefined = useTokenBalance(account ?? undefined, chainId ? UNI[chainId] : undefined)
+    if (isAddress(content) && chainId) {
+      return <ExternalLink href={getEtherscanLink(chainId, content, 'address')}>{commonName}</ExternalLink>
+            href={proposalData?.proposer && chainId ? getEtherscanLink(chainId, proposalData?.proposer, 'address') : ''}
+./pages/Vote/styled.tsx
+./pages/Vote/index.tsx
+import { JSBI, TokenAmount, ChainId } from '@violeta.at.bww/thelog-sdk'
+  const { account, chainId } = useActiveWeb3React()
+  const uniBalance: TokenAmount | undefined = useTokenBalance(account ?? undefined, chainId ? UNI[chainId] : undefined)
+                    href={getEtherscanLink(ChainId.MAINNET, userDelegatee, 'address')}
+./pages/AppBody.tsx
+./pages/Swap/redirects.tsx
+./pages/Swap/index.tsx
+./pages/PoolFinder/index.tsx
+./pages/MigrateV1/MigrateV1Exchange.tsx
+  const { chainId } = useActiveWeb3React()
+            {chainId && token.equals(WETH[chainId]) ? 'WETH' : token.symbol}/ETH
+          Pooled {chainId && token.equals(WETH[chainId]) ? 'WETH' : token.symbol}:
+  const { account, chainId } = useActiveWeb3React()
+  const [v2PairState, v2Pair] = usePair(chainId ? WETH[chainId] : undefined, token)
+  const v2SpotPrice = chainId && v2Pair ? v2Pair.reserveOf(token).divide(v2Pair.reserveOf(WETH[chainId])) : undefined
+        {chainId && (
+          <ExternalLink href={getEtherscanLink(chainId, MIGRATOR_ADDRESS, 'address')}>
+  const { chainId, account } = useActiveWeb3React()
+      validatedAddress && chainId && token
+        ? new Token(chainId, validatedAddress, 18, `UNI-V1-${token.symbol}`, 'Uniswap V1')
+    [chainId, validatedAddress, token]
+        ) : validatedAddress && chainId && token?.equals(WETH[chainId]) ? (
+./pages/MigrateV1/index.tsx
+  const { account, chainId } = useActiveWeb3React()
+    return chainId
+          exchangeAddress => new Token(chainId, exchangeAddress, 18, 'U.EXCHANGE', 'U.EXCHANGE V1')
+  }, [chainId, V1Exchanges])
+./pages/MigrateV1/EmptyState.tsx
+./pages/MigrateV1/RemoveV1Exchange.tsx
+  const { chainId } = useActiveWeb3React()
+          summary: `Remove ${chainId && token.equals(WETH[chainId]) ? 'WETH' : token.symbol}/ETH V1 liquidity`
+  }, [exchangeContract, liquidityTokenAmount, token, chainId, addTransaction])
+          chainId && token.equals(WETH[chainId]) ? 'WETH' : token.symbol
+  const { chainId, account } = useActiveWeb3React()
+      validatedAddress && chainId && token
+        ? new Token(chainId, validatedAddress, 18, `UNI-V1-${token.symbol}`, 'Uniswap V1')
+    [chainId, validatedAddress, token]
+./pages/AddLiquidity/redirects.tsx
+./pages/AddLiquidity/PoolPriceBar.tsx
+./pages/AddLiquidity/ConfirmAddModalBottom.tsx
+./pages/AddLiquidity/index.tsx
+  const { account, chainId, library } = useActiveWeb3React()
+    chainId &&
+      ((currencyA && currencyEquals(currencyA, WETH[chainId])) ||
+        (currencyB && currencyEquals(currencyB, WETH[chainId])))
+    if (!chainId || !library || !account) return
+    const router = getRouterContract(chainId, library, account)
+        wrappedCurrency(tokenBIsETH ? currencyA : currencyB, chainId)?.address ?? '', // token
+        wrappedCurrency(currencyA, chainId)?.address ?? '',
+        wrappedCurrency(currencyB, chainId)?.address ?? '',
+./pages/App.tsx
+./pages/RemoveLiquidity/redirects.tsx
+./pages/RemoveLiquidity/index.tsx
+  const { account, chainId, library } = useActiveWeb3React()
+  const [tokenA, tokenB] = useMemo(() => [wrappedCurrency(currencyA, chainId), wrappedCurrency(currencyB, chainId)], [
+    chainId
+      { name: 'chainId', type: 'uint256' },
+      chainId: chainId,
+    if (!chainId || !library || !account || !deadline) throw new Error('missing dependencies')
+    const router = getRouterContract(chainId, library, account)
+    chainId &&
+      ((currencyA && currencyEquals(WETH[chainId], currencyA)) ||
+        (currencyB && currencyEquals(WETH[chainId], currencyB)))
+                    {chainId && (oneCurrencyIsWETH || oneCurrencyIsETH) ? (
+                            to={`/remove/${currencyA === ETHER ? WETH[chainId].address : currencyIdA}/${
+                              currencyB === ETHER ? WETH[chainId].address : currencyIdB
+                              currencyA && currencyEquals(currencyA, WETH[chainId]) ? 'ETH' : currencyIdA
+                            }/${currencyB && currencyEquals(currencyB, WETH[chainId]) ? 'ETH' : currencyIdB}`}
+./i18n.ts
+./constants/abis/erc20_bytes32.json
+./constants/abis/argent-wallet-detector.ts
+./constants/abis/migrator.json
+./constants/abis/erc20.json
+./constants/abis/unisocks.json
+./constants/abis/ens-registrar.json
+./constants/abis/migrator.ts
+./constants/abis/staking-rewards.ts
+./constants/abis/weth.json
+./constants/abis/ens-public-resolver.json
+./constants/abis/argent-wallet-detector.json
+./constants/abis/erc20.ts
+./constants/proposals/uniswap_grants.ts
+./constants/proposals/index.ts
+./constants/v1/v1_exchange.json
+./constants/v1/v1_factory.json
+./constants/v1/index.ts
+import { ChainId } from '@violeta.at.bww/thelog-sdk'
+const V1_FACTORY_ADDRESSES: { [chainId in ChainId]: string } = {
+ // [ChainId.MAINNET]: '0xc0a47dFe034B400B47bDaD5FecDa2621de6c4d95',
+ // [ChainId.ROPSTEN]: '0x9c83dCE8CA20E9aAF9D3efc003b2ea62aBC08351',
+  [ChainId.RINKEBY]: '0xF26f76b3C0833aDBF078B455258648FD0C84f2A0'
+//  [ChainId.GÖRLI]: '0x6Ce570d02D73d4c384b46135E87f8C592A8c86dA',
+//  [ChainId.RSK]: '0xD3E51Ef092B2845f10401a0159B2B96e8B6c3D30',
+//  [ChainId.RSKTEST]: '0xD3E51Ef092B2845f10401a0159B2B96e8B6c3D30',
+//  [ChainId.KOVAN]: '0xD3E51Ef092B2845f10401a0159B2B96e8B6c3D30',
+//  [ChainId.BINANCE]: '0xD3E51Ef092B2845f10401a0159B2B96e8B6c3D30',
+//  [ChainId.BINANCETEST]: '0xD3E51Ef092B2845f10401a0159B2B96e8B6c3D30',
+//  [ChainId.XDAI]: '0xD3E51Ef092B2845f10401a0159B2B96e8B6c3D30',
+//  [ChainId.POLYGON]: '0xD3E51Ef092B2845f10401a0159B2B96e8B6c3D30'
+./constants/lists.ts
+./constants/multicall/index.ts
+import { ChainId } from '@violeta.at.bww/thelog-sdk'
+const MULTICALL_NETWORKS: { [chainId in ChainId]: string } = {
+  [ChainId.MAINNET]: '0xeefBa1e63905eF1D7ACbA5a8513c70307C1cE441',
+  [ChainId.ROPSTEN]: '0x53C43764255c17BD724F74c4eF150724AC50a3ed',
+  [ChainId.RSK]: '0x10AF1B3BBA6cDf672096eD57Fa16dD06C82ba7B0',
+  [ChainId.RSKTEST]: '0x2cc8688C5f75E365aaEEb4ea8D6a480405A48D2A',
+  [ChainId.KOVAN]: '0x2cc8688C5f75E365aaEEb4ea8D6a480405A48D2A',
+  [ChainId.RINKEBY]: '0x42Ad527de7d4e9d9d011aC45B31D8551f8Fe9821',
+  [ChainId.GÖRLI]: '0x77dCa2C955b15e9dE4dbBCf1246B4B85b651e50e',
+  [ChainId.BINANCE]: '0x1Ee38d535d541c55C9dae27B12edf090C608E6Fb',
+  [ChainId.BINANCETEST]: '0x1Ee38d535d541c55C9dae27B12edf090C608E6Fb',
+  [ChainId.XDAI]: '0x0df07C4557311F779AD668aEaCdB61c9eB10dFf7',
+  [ChainId.POLYGON]: '0xa1B2b503959aedD81512C37e9dce48164ec6a94d'
+./constants/multicall/abi.json
+./constants/tokenLists/uniswap-v2-unsupported.tokenlist.json
+      "chainId": 1,
+./constants/tokenLists/tokenList.json
+      "chainId": 1,
+      "chainId": 1,
+      "chainId": 1,
+      "chainId": 1,
+      "chainId": 1,
+      "chainId": 4,
+      "chainId": 1,
+      "chainId": 4,
+      "chainId": 4,
+      "chainId": 4,
+      "chainId": 56,
+      "chainId": 56,
+      "chainId": 30,
+      "chainId": 30,
+      "chainId": 31,
+      "chainId": 31,
+./constants/index.ts
+import { ChainId, JSBI, Percent, Token, WETH } from '@violeta.at.bww/thelog-sdk'
+  readonly [chainId in ChainId]: Token[]
+export const DAI = new Token(ChainId.MAINNET, '0x6B175474E89094C44Da98b954EedeAC495271d0F', 18, 'DAI', 'Dai Stablecoin')
+export const USDC = new Token(ChainId.MAINNET, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC', 'USD//C')
+export const USDT = new Token(ChainId.MAINNET, '0xdAC17F958D2ee523a2206206994597C13D831ec7', 6, 'USDT', 'Tether USD')
+export const COMP = new Token(ChainId.MAINNET, '0xc00e94Cb662C3520282E6f5717214004A7f26888', 18, 'COMP', 'Compound')
+export const MKR = new Token(ChainId.MAINNET, '0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2', 18, 'MKR', 'Maker')
+export const AMPL = new Token(ChainId.MAINNET, '0xD46bA6D942050d489DBd938a2C909A5d5039A161', 9, 'AMPL', 'Ampleforth')
+export const WBTC = new Token(ChainId.MAINNET, '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599', 8, 'WBTC', 'Wrapped BTC')
+export const UNI: { [chainId in ChainId]: Token } = {
+  [ChainId.MAINNET]: new Token(ChainId.MAINNET, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
+  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
+  [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
+  [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
+  [ChainId.RSK]: new Token(ChainId.RSK, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
+  [ChainId.RSKTEST]: new Token(ChainId.RSKTEST, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
+  [ChainId.KOVAN]: new Token(ChainId.KOVAN, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
+  [ChainId.BINANCE]: new Token(ChainId.BINANCE, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
+  [ChainId.BINANCETEST]: new Token(ChainId.BINANCETEST, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
+  [ChainId.XDAI]: new Token(ChainId.XDAI, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
+  [ChainId.POLYGON]: new Token(ChainId.POLYGON, UNI_ADDRESS, 18, 'UNI', 'Uniswap')
+export const UCASH: { [chainId in ChainId]: Token } = {
+  [ChainId.MAINNET]: new Token(
+    ChainId.MAINNET,
+  [ChainId.RINKEBY]: new Token(
+    ChainId.RINKEBY,
+  [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, UCASH_Address, 8, 'UCASH', 'Universal Cash'),
+  [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, UCASH_Address, 8, 'UCASH', 'Universal Cash'),
+  [ChainId.RSK]: new Token(ChainId.RSK, UCASH_Address, 8, 'UCASH', 'Universal Cash'),
+  [ChainId.RSKTEST]: new Token(ChainId.RSKTEST, UCASH_Address, 8, 'UCASH', 'Universal Cash'),
+  [ChainId.KOVAN]: new Token(ChainId.KOVAN, UCASH_Address, 8, 'UCASH', 'Universal Cash'),
+  [ChainId.BINANCE]: new Token(
+    ChainId.BINANCE,
+  [ChainId.BINANCETEST]: new Token(
+    ChainId.BINANCETEST,
+  [ChainId.XDAI]: new Token(ChainId.XDAI, UCASH_Address, 8, 'UCASH', 'Universal Cash'),
+  [ChainId.POLYGON]: new Token(
+    ChainId.POLYGON,
+export const MERKLE_DISTRIBUTOR_ADDRESS: { [chainId in ChainId]?: string } = {
+  [ChainId.MAINNET]: '0x090D4613473dEE047c3f2706764f49E0821D256e'
+  [ChainId.MAINNET]: [WETH[ChainId.MAINNET]],
+  [ChainId.ROPSTEN]: [WETH[ChainId.ROPSTEN]],
+  [ChainId.RINKEBY]: [WETH[ChainId.RINKEBY]],
+  [ChainId.GÖRLI]: [WETH[ChainId.GÖRLI]],
+  [ChainId.KOVAN]: [WETH[ChainId.KOVAN]],
+  [ChainId.RSK]: [WETH[ChainId.RSK]],
+  [ChainId.RSKTEST]: [WETH[ChainId.RSKTEST]],
+  [ChainId.BINANCE]: [WETH[ChainId.BINANCE]],
+  [ChainId.BINANCETEST]: [WETH[ChainId.BINANCETEST]],
+  [ChainId.XDAI]: [WETH[ChainId.XDAI]],
+  [ChainId.POLYGON]: [WETH[ChainId.POLYGON]]
+  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, COMP, MKR, WBTC]
+export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: Token[] } } = {
+  [ChainId.MAINNET]: {
+    [AMPL.address]: [DAI, WETH[ChainId.MAINNET]]
+  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC]
+  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC]
+export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
+  [ChainId.MAINNET]: [
+      new Token(ChainId.MAINNET, '0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643', 8, 'cDAI', 'Compound Dai'),
+      new Token(ChainId.MAINNET, '0x39AA39c021dfbaE8faC545936693aC917d5E7563', 8, 'cUSDC', 'Compound USD Coin')
+export const SupportedChainId = ChainId
+export const ALL_SUPPORTED_CHAIN_IDS: ChainId[] = [
+  ChainId.MAINNET,
+  ChainId.RINKEBY,
+  ChainId.ROPSTEN,
+  ChainId.GÖRLI,
+  ChainId.RSK,
+  ChainId.RSKTEST,
+  ChainId.KOVAN,
+  ChainId.BINANCE,
+  ChainId.BINANCETEST,
+  ChainId.XDAI,
+  ChainId.POLYGON
+  [ChainId.MAINNET],
+  [ChainId.RINKEBY],
+  [ChainId.ROPSTEN],
+  [ChainId.GÖRLI],
+  [ChainId.RSK],
+  [ChainId.RSKTEST],
+  [ChainId.KOVAN],
+  [ChainId.BINANCE],
+  [ChainId.BINANCETEST],
+  [ChainId.XDAI],
+  [ChainId.POLYGON]
+export type SupportedL1ChainId = typeof L1_CHAIN_IDS[number]
+  [ChainId.MAINNET]: {
+  [ChainId.RINKEBY]: {
+  [ChainId.ROPSTEN]: {
+  [ChainId.GÖRLI]: {
+  [ChainId.RSK]: {
+  [ChainId.RSKTEST]: {
+  [ChainId.KOVAN]: {
+  [ChainId.BINANCE]: {
+  [ChainId.BINANCETEST]: {
+  [ChainId.XDAI]: {
+  [ChainId.POLYGON]: {

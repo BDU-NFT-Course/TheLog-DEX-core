@@ -7,7 +7,7 @@ import {
   TokenAmount,
   Trade,
   TradeType
-} from '@violeta.at.bww/dex-course-u-exchange-sdk'
+} from '@violeta.at.bww/thelog-sdk'
 import { computeTradePriceBreakdown } from './prices'
 
 describe('prices', () => {

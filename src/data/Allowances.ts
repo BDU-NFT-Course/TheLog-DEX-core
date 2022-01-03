@@ -1,4 +1,4 @@
-import { Token, TokenAmount } from '@violeta.at.bww/dex-course-u-exchange-sdk'
+import { Token, TokenAmount } from '@violeta.at.bww/thelog-sdk'
 import { useMemo } from 'react'
 
 import { useTokenContract } from '../hooks/useContract'

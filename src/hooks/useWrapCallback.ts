@@ -1,4 +1,4 @@
-import { Currency, currencyEquals, ETHER, WETH } from '@violeta.at.bww/dex-course-u-exchange-sdk'
+import { Currency, currencyEquals, ETHER, WETH } from '@violeta.at.bww/thelog-sdk'
 import { useMemo } from 'react'
 import { tryParseAmount } from '../state/swap/hooks'
 import { useTransactionAdder } from '../state/transactions/hooks'

@@ -3,12 +3,12 @@ import BinanceLogo from '../assets/svg/binance-logo.svg'
 import MaticLogo from '../assets/images/matic-logo.png'
 import RSKLogo from '../assets/images/rsk-logo.png'
 
-import { ChainId, JSBI, Percent, Token, WETH } from '@violeta.at.bww/dex-course-u-exchange-sdk'
+import { ChainId, JSBI, Percent, Token, WETH } from '@violeta.at.bww/thelog-sdk'
 import { AbstractConnector } from '@web3-react/abstract-connector'
 
 import { fortmatic, injected, portis, walletconnect, walletlink } from '../connectors'
 
-export const ROUTER_ADDRESS = '0x0D7b651E90c4579b01b84996B075c49a5E65B35A'
+export const ROUTER_ADDRESS = '0xEa43476F586569EFaFb57A72e13513607ed03c50'
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
 

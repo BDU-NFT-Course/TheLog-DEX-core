@@ -1,4 +1,4 @@
-import { Trade } from '@violeta.at.bww/dex-course-u-exchange-sdk'
+import { Trade } from '@violeta.at.bww/thelog-sdk'
 import React, { Fragment, memo, useContext } from 'react'
 import { ChevronRight } from 'react-feather'
 import { Flex } from 'rebass'
