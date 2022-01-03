@@ -1,15 +1,7 @@
 import useENS from '../../hooks/useENS'
 import { Version } from '../../hooks/useToggledVersion'
 import { parseUnits } from '@ethersproject/units'
-import {
-  Currency,
-  CurrencyAmount,
-  ETHER,
-  JSBI,
-  Token,
-  TokenAmount,
-  Trade
-} from '@violeta.at.bww/thelog-sdk'
+import { Currency, CurrencyAmount, ETHER, JSBI, Token, TokenAmount, Trade } from '@violeta.at.bww/thelog-sdk'
 import { ParsedQs } from 'qs'
 import { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'

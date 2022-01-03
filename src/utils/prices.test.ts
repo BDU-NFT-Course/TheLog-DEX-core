@@ -1,13 +1,4 @@
-import {
-  ChainId,
-  JSBI,
-  Pair,
-  Route,
-  Token,
-  TokenAmount,
-  Trade,
-  TradeType
-} from '@violeta.at.bww/thelog-sdk'
+import { ChainId, JSBI, Pair, Route, Token, TokenAmount, Trade, TradeType } from '@violeta.at.bww/thelog-sdk'
 import { computeTradePriceBreakdown } from './prices'
 
 describe('prices', () => {
