@@ -1,4 +1,4 @@
-import { ChainId} from '@violeta.at.bww/thelog-sdk'
+import { ChainId } from '@violeta.at.bww/thelog-sdk'
 //import React, { useState } from 'react'
 import React from 'react'
 import { Text } from 'rebass'
@@ -11,7 +11,7 @@ import Logo from '../../assets/svg/logo.svg'
 import LogoDark from '../../assets/svg/logo_white.svg'
 import { useActiveWeb3React } from '../../hooks'
 import { useDarkModeManager } from '../../state/user/hooks'
-import { useETHBalances} from '../../state/wallet/hooks'
+import { useETHBalances } from '../../state/wallet/hooks'
 import { CardNoise } from '../earn/styled'
 
 import { TYPE, ExternalLink } from '../../theme'
@@ -134,7 +134,14 @@ const UNIAmount = styled(AccountElement)`
   height: 36px;
   font-weight: 500;
   background-color: ${({ theme }) => theme.bg3};
-  background: linear-gradient(153deg, rgba(194,222,255,1) 0%, rgba(118,170,255,1) 22%, rgba(244,109,255,1) 44%, rgba(224,163,100,1) 73%, rgba(139,246,243,1) 100%);
+  background: linear-gradient(
+    153deg,
+    rgba(194, 222, 255, 1) 0%,
+    rgba(118, 170, 255, 1) 22%,
+    rgba(244, 109, 255, 1) 44%,
+    rgba(224, 163, 100, 1) 73%,
+    rgba(139, 246, 243, 1) 100%
+  );
 `
 
 const UNIWrapper = styled.span`
@@ -264,8 +271,7 @@ const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.RINKEBY]: 'Rinkeby',
   [ChainId.ROPSTEN]: 'Ropsten',
   [ChainId.GÖRLI]: 'Görli',
-  [ChainId.KOVAN]: 'Kovan',
-
+  [ChainId.KOVAN]: 'Kovan'
 }
 
 export default function Header() {
@@ -283,7 +289,6 @@ export default function Header() {
 
   //const aggregateBalance: TokenAmount | undefined = useAggregateUniBalance()
 
-  
   const showClaimPopup = useShowClaimPopup()
 
   //const countUpValue = aggregateBalance?.toFixed(0) ?? '0'
@@ -318,12 +323,10 @@ export default function Header() {
           >
             {t('pool')}
           </StyledNavLink>*/}
-
-
           <StyledExternalLink id={`stake-nav-link`} href={'https://vgotcheva.github.io/thelog'}>
             TheLog <span style={{ fontSize: '11px' }}>↗</span>
           </StyledExternalLink>
-          </HeaderLinks>
+        </HeaderLinks>
       </HeaderRow>
       <HeaderControls>
         <HeaderElement>
