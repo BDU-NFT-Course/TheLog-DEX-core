@@ -206,7 +206,6 @@ const UniIcon = styled.div`
 
 const activeClassName = 'ACTIVE'
 
-
 const StyledExternalLink = styled(ExternalLink).attrs({
   activeClassName
 })<{ isActive?: boolean }>`
