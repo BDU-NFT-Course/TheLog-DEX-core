@@ -1,4 +1,4 @@
-import { transparentize } from 'polished'
+//import { transparentize } from 'polished'
 import React, { useMemo } from 'react'
 import styled, {
   ThemeProvider as StyledComponentsThemeProvider,
@@ -59,24 +59,24 @@ export function colors(darkMode: boolean): Colors {
     advancedBG: darkMode ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.6)',
 
     //primary colors
-    primary1: darkMode ? '#333' : '#b88a2e',
-    primary2: darkMode ? '#3680E7' : '#cc9933',
-    primary3: darkMode ? '#4D8FEA' : '#d1a347',
-    primary4: darkMode ? '#376bad70' : '#d6ad5c',
-    primary5: darkMode ? '#153d6f70' : '#dbb870',
+    primary1: darkMode ? '#2172E5' : '#ff007a',
+    primary2: darkMode ? '#3680E7' : '#FF8CC3',
+    primary3: darkMode ? '#4D8FEA' : '#FF99C9',
+    primary4: darkMode ? '#376bad70' : '#F6DDE8',
+    primary5: darkMode ? '#153d6f70' : '#FDEAF1',
 
     // color text
-    primaryText1: darkMode ? '#6da8ff' : '#fff',
+    primaryText1: darkMode ? '#6da8ff' : '#ff007a',
 
     // secondary colors
-    secondary1: darkMode ? '#333' : '#cc9933',
+    secondary1: darkMode ? '#2172E5' : '#ff007a',
     secondary2: darkMode ? '#17000b26' : '#F6DDE8',
     secondary3: darkMode ? '#17000b26' : '#FDEAF1',
 
     // other
-    red1: '#FD4040',
-    red2: '#F82D3A',
-    red3: '#D60000',
+    red1: '#f4e3d7',
+    red2: '#e9c6af',
+    red3: '#a05a2c',
     green1: '#27AE60',
     yellow1: '#FFE270',
     yellow2: '#F3841E',
@@ -194,7 +194,7 @@ body {
 }
 
  a {
-   color: ${colors(false).blue1};
+   color: ${colors(false).blue1}; 
  }
 
 * {
@@ -212,24 +212,18 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   font-feature-settings: 'ss01' on, 'ss02' on, 'cv01' on, 'cv03' on;
-
+  
 }
 `
 
 export const ThemedGlobalStyle = createGlobalStyle`
 html {
   color: ${({ theme }) => theme.text1};
-  background-color: ${({ theme }) => theme.bg2};
+  background-color: ${({ theme }) => theme.bg3};
 }
 
 body {
   min-height: 100vh;
   background-position: 0 -30vh;
   background-repeat: no-repeat;
-  background-image: ${({ theme }) =>
-    `radial-gradient(50% 50% at 50% 50%, ${transparentize(0.9, theme.primary1)} 0%, ${transparentize(
-      1,
-      theme.bg1
-    )} 100%)`};
-}
-`
+}`

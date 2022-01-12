@@ -185,10 +185,10 @@ export default function Sidebar() {
             <Spacer />
             {t('Liquidity')}
           </StyledNavLink>
-          <StyledExternalLink id={`nav-discord`} href={'https://discord.gg/Smm8zjEuyB'}>
+          <StyledExternalLink id={`nav-discord`} href={'https://vgotcheva.github.io/thelog'}>
             <MessageSquare size={20} />
             <Spacer />
-            Discord <span style={{ fontSize: '11px' }}>↗</span>
+            About <span style={{ fontSize: '11px' }}>↗</span>
           </StyledExternalLink>
           {/* <StyledExternalLink
             id={`nav-analytics`}

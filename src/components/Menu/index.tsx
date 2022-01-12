@@ -103,11 +103,11 @@ export default function Menu() {
 
       {open && (
         <MenuFlyout>
-          <MenuItem id="link" href="https://discord.gg/Smm8zjEuyB">
+          <MenuItem id="link" href="https://vgotcheva.github.io/thelog">
             <MessageCircle size={14} />
-            Discord
+            About
           </MenuItem>
-          <MenuItem id="link" href="https://info.u.exchange">
+          <MenuItem id="link" href="https://vgotcheva.github.io/thelog">
             <PieChart size={14} />
             Analytics
           </MenuItem>
