@@ -126,7 +126,7 @@ library TheLogLibrary {
                 hex'ff',
                 factory,
                 keccak256(abi.encodePacked(token0, token1)),
-                hex'ee9b5ca082bad98446bcdea46168f342aeae9940f7386e400d0ad4557aafac88' // init code hash
+                hex'bf854ea606f019c0da54e3e34a3585b9fb75bdbf927416a152be1e29d13a63e5' // init code hash
             ))));
     }
 

@@ -1,4 +1,12 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
+.secrets.json
+.secrets-polygon.json
+artifacts/
+cache/
+src/assets-swsw/
+src/assets-uc/
+src/theme-swsw/
+src/theme-uc/
 
 # dependencies
 /node_modules
