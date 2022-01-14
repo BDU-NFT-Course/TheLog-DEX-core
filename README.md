@@ -1,2 +1,4 @@
-# The Log DEX
-A research project for using Uniswap contracts for services exchange
+# TheLog DEX
+A research project for using Uniswap contracts V2
+
+Contracts deployed on xDAI, POLYGON and RINKEBY.
