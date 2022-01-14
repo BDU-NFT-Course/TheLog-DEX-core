@@ -2745,10 +2745,10 @@
     "@uniswap/lib" "1.1.1"
     "@uniswap/v2-core" "1.0.0"
 
-"@violeta.at.bww/thelog-sdk@1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@violeta.at.bww/thelog-sdk/-/thelog-sdk-1.2.2.tgz#c6dd7ff557b446a71aa1148b294e0325cc2d26a7"
-  integrity sha512-bQiMQzCEFRJMQpimEiikynk6T5vOWOWbUalvGlr6bAYm3uO5h8eLyWnVT5m7CfldI2u7oQns4wENddqI/KNj5Q==
+"@violeta.at.bww/thelog-sdk@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@violeta.at.bww/thelog-sdk/-/thelog-sdk-2.0.0.tgz#084b4bd1ebfeb612eb12cac963ecc0f4c3d80b3f"
+  integrity sha512-8LqnHgSA6MrF2r2Zr63/VyKV7v4zrk1VvLgY1rJBc1nAKK0FtiGXxMCTVkKlsggn8qVraQjRXtKklMB0GCBp4w==
   dependencies:
     "@uniswap/v2-core" "^1.0.0"
     big.js "^5.2.2"
