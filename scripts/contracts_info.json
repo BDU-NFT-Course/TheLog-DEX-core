@@ -1,5 +1,14 @@
+RINKEBY
 {
   "factory_contract_address": "0xF26f76b3C0833aDBF078B455258648FD0C84f2A0",
   "pair_init_code_hash": "0xee9b5ca082bad98446bcdea46168f342aeae9940f7386e400d0ad4557aafac88",
   "router_contract_address": "0xEa43476F586569EFaFb57A72e13513607ed03c50"
+}
+
+XDAI, POLYGON, RINKEBY
+{
+  "factory_contract_address": "0x719767ae84034899232757F88095d2dB64b66482",
+  "pair_init_code_hash": "0x578c7a2933de3daa901ee5efcfc8b3bbcebd1fa1e42f5f8d9e14d09e76321dea",
+  "router_contract_address": "0x26fDCd0148D8968396f988f1e33a3D9BC50Cf8eC",
+  "WETH" : "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
 }
